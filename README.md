@@ -1,73 +1,83 @@
-BlogIt — Full-stack Blog App
-A simple blog platform where users can sign up/sign in, create posts with cover images, and comment on posts. Built with Node.js, Express, EJS, MongoDB/Mongoose, Multer, JWT cookies, Bootstrap.
+<div align="center">
 
-Features
-User auth with JWT in HTTP-only cookies (custom middleware attaches req.user)
+# BlogIt — Full‑stack Blog App
 
-Create/read blog posts with image uploads (Multer → public/uploads/)
+A simple blog platform where users can sign up/sign in, create posts with cover images, and comment on posts.
 
-Comments on posts; author avatar/name via populate
+<a><img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen" /></a>
+<a><img src="https://img.shields.io/badge/Express-5-black" /></a>
+<a><img src="https://img.shields.io/badge/MongoDB-Mongoose-green" /></a>
+<a><img src="https://img.shields.io/badge/View-EJS-blue" /></a>
+<a><img src="https://img.shields.io/badge/UI-Bootstrap%205-7952B3" /></a>
+<a><img src="https://img.shields.io/badge/License-MIT-blue" /></a>
 
-Server-rendered UI (EJS) + Bootstrap layout
+</div>
 
-Basic input hardening (trim, ObjectId validation), proper middleware order
+---
 
-Tech Stack
-Backend: Node.js, Express, Mongoose
+## Overview
 
-Views: EJS, Bootstrap 5
+**BlogIt** is a classic, server‑rendered web app built with **Node.js, Express, EJS, MongoDB/Mongoose, Multer, JWT cookies, and Bootstrap**.
 
-Auth: JWT (cookie), cookie-parser
+Key capabilities:
+- User auth with **JWT** stored in **HTTP‑only cookies** (custom middleware attaches `req.user`/`res.locals.user`)
+- Create/read blog posts with **image uploads** (Multer → `public/uploads/`)
+- **Comments** on posts; author avatar + name rendered via **Mongoose `populate`**
+- Clean, responsive UI with Bootstrap layout
+- Input hardening (trim, **ObjectId** validation) and correct middleware order
 
-Uploads: Multer (disk storage)
+---
 
-Config: dotenv
+## Tech Stack
 
-Getting Started
-Prerequisites
-Node.js 18+ and npm
+- **Backend:** Node.js, Express, Mongoose  
+- **Views:** EJS, Bootstrap 5  
+- **Auth:** JWT (cookie) + `cookie-parser`  
+- **Uploads:** Multer (disk storage)  
+- **Config:** `dotenv`
 
-MongoDB running locally (or MongoDB Atlas)
+---
 
-1) Clone & install
-bash
-Copy
-Edit
-git clone <your-repo-url>
+## Getting Started
+
+### Prerequisites
+- Node.js **18+** and npm
+- MongoDB running locally, or a MongoDB Atlas cluster
+
+### 1) Clone & install
+```bash
+git clone <YOUR-REPO-URL>
 cd blog-app
 npm install
-2) Environment variables
-Create a .env in the project root:
+```
 
-env
-Copy
-Edit
+### 2) Environment variables
+Create a **.env** in the project root:
+
+```env
 MONGO_URL=mongodb://localhost:27017/bloggify
 JWT_SECRET=replace_with_a_long_random_string
 PORT=8000
-At the top of index.js:
+```
 
-js
-Copy
-Edit
+At the **top** of `index.js` (before reading any `process.env`):
+```js
 require('dotenv').config();
+```
+
 Sanity check (optional):
-
-js
-Copy
-Edit
+```js
 console.log('MONGO_URL ->', process.env.MONGO_URL);
-3) Create uploads folder
-Multer writes to ./public/uploads/. Make sure it exists:
+```
 
-bash
-Copy
-Edit
+### 3) Create uploads folder
+Multer writes to `./public/uploads/`. Make sure it exists:
+```bash
 mkdir -p public/uploads
-4) Run
-bash
-Copy
-Edit
+```
+
+### 4) Run
+```bash
 # if you have a dev script with nodemon
 npm run dev
 
@@ -75,12 +85,14 @@ npm run dev
 npm start
 # or
 node index.js
-App will start on http://localhost:8000 (or your PORT).
+```
+App will start on `http://localhost:8000` (or your `PORT`).
 
-Folder Structure
-pgsql
-Copy
-Edit
+---
+
+## Folder Structure
+
+```
 .
 ├─ public/
 │  └─ uploads/           # Multer saves images here (served statically)
@@ -97,27 +109,84 @@ Edit
 ├─ index.js
 ├─ package.json
 └─ .env
-Routes (Quick Reference)
-Home / Blogs
-GET / — List all blogs
+```
 
-GET /blog/add-new — Render “new blog” form
+---
 
-POST /blog/ — Create blog (Multer field: coverImage)
+## Routes (Quick Reference)
 
-GET /blog/:id — View a single blog (populates createdBy)
+### Home / Blogs
+- `GET /` — List all blogs
+- `GET /blog/add-new` — Render “new blog” form
+- `POST /blog/` — Create blog (**Multer field:** `coverImage`)
+- `GET /blog/:id` — View a single blog (populates `createdBy`)
+- `POST /blog/comment/:blogId` — Add a comment to a blog
 
-POST /blog/comment/:blogId — Add a comment to a blog
+### Auth (examples)
+- `GET /user/signin` — Sign in page
+- `POST /user/signin` — Sign in (sets `token` cookie)
+- `GET /user/signup` — Sign up page
+- `POST /user/signup` — Create account
+- *(optional)* `POST /user/logout` — Clear cookie
 
-Auth (examples)
-GET /user/signin — Sign in page
+> The auth middleware reads the JWT from the **`token`** cookie and sets `req.user` / `res.locals.user`.
 
-POST /user/signin — Sign in (sets token cookie)
+---
 
-GET /user/signup — Sign up page
+## Screenshots
 
-POST /user/signup — Create account
+<p align="center">
+  <!-- Replace with your own images -->
+  <img src="screenshots/home.png" alt="Home" width="48%">
+  <img src="screenshots/blog.png" alt="Blog Detail" width="48%">
+</p>
+<p align="center">
+  <img src="screenshots/signin.png" alt="Signin" width="32%">
+  <img src="screenshots/create.png" alt="Create Post" width="32%">
+  <img src="screenshots/comment.png" alt="Comments" width="32%">
+</p>
 
-(optional) POST /user/logout — Clear cookie
+---
 
-The auth middleware reads the JWT from the token cookie and sets req.user / res.locals.user.
+## Deployment (Render/Railway + MongoDB Atlas)
+
+1. Push to GitHub.  
+2. Create a **MongoDB Atlas** cluster → obtain connection string → set as `MONGO_URL`.  
+3. On Render/Railway:  
+   - **Build:** `npm install`  
+   - **Start:** `node index.js` (or `npm start`)  
+   - **Env vars:** `MONGO_URL`, `JWT_SECRET`, `PORT` (optional)  
+4. Ensure Express serves static assets (`public/`) — already handled with `app.use(express.static(...))`.
+
+---
+
+## Notes & Hardening
+
+- **ObjectId safety:** routes **trim** and validate ids before passing to Mongoose:
+  ```js
+  const id = String(req.params.blogId || '').trim();
+  if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).send('Invalid id');
+  ```
+- Ensure middleware order: `urlencoded/json` → `cookieParser` → **auth** → `express.static` → routes
+- Use long, random `JWT_SECRET` in production
+
+---
+
+## Roadmap / Nice Upgrades
+
+- Validation (express-validator/Joi), centralized error handler, 404/500 pages  
+- Security: `helmet`, rate limiting  
+- Cloud storage for images (Cloudinary/S3) + thumbnails with `sharp`  
+- Pagination, search, tags, slugs (`/blog/my-first-post`)  
+- Tests: Jest + Supertest; CI with GitHub Actions
+
+---
+
+## License
+MIT (or your choice)
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ using Node, Express, and MongoDB.</sub>
+</div>
