@@ -146,47 +146,8 @@ App will start on `http://localhost:8000` (or your `PORT`).
   <img src="screenshots/comment.png" alt="Comments" width="32%">
 </p>
 
----
 
-## Deployment (Render/Railway + MongoDB Atlas)
-
-1. Push to GitHub.  
-2. Create a **MongoDB Atlas** cluster → obtain connection string → set as `MONGO_URL`.  
-3. On Render/Railway:  
-   - **Build:** `npm install`  
-   - **Start:** `node index.js` (or `npm start`)  
-   - **Env vars:** `MONGO_URL`, `JWT_SECRET`, `PORT` (optional)  
-4. Ensure Express serves static assets (`public/`) — already handled with `app.use(express.static(...))`.
-
----
-
-## Notes & Hardening
-
-- **ObjectId safety:** routes **trim** and validate ids before passing to Mongoose:
-  ```js
-  const id = String(req.params.blogId || '').trim();
-  if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).send('Invalid id');
-  ```
-- Ensure middleware order: `urlencoded/json` → `cookieParser` → **auth** → `express.static` → routes
-- Use long, random `JWT_SECRET` in production
-
----
-
-## Roadmap / Nice Upgrades
-
-- Validation (express-validator/Joi), centralized error handler, 404/500 pages  
-- Security: `helmet`, rate limiting  
-- Cloud storage for images (Cloudinary/S3) + thumbnails with `sharp`  
-- Pagination, search, tags, slugs (`/blog/my-first-post`)  
-- Tests: Jest + Supertest; CI with GitHub Actions
-
----
-
-## License
-MIT (or your choice)
-
----
 
 <div align="center">
-  <sub>Built with ❤️ using Node, Express, and MongoDB.</sub>
+  <sub>Thank You.</sub>
 </div>
