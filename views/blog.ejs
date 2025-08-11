@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head') %>
+  <title><%= blog.title %></title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+
+  <div class="container mt-4">
+    <h1><%= blog.title %></h1>
+
+    <img src="<%= blog.coverImageURL %>" width="700" alt="cover image" />
+    <pre class="mt-3"><%= blog.body %></pre>
+  </div>
+
+  <div class="container mt-4 d-flex align-items-center gap-3">
+    <img src="<%= blog.createdBy.profileImageURL %>" width="64" height="64" class="rounded-circle" alt="author" />
+    <span class="fw-semibold"><%= blog.createdBy.fullName %></span>
+  </div>
+
+  <div class="container mt-3">
+    <h1>Comments (<%= comments.length %>)</h1>
+
+    <% if (locals.user) { %>
+      <form action="/blog/comment/<%= String(blog._id).trim() %>" method="POST" class="mt-2">
+        <div class="d-flex gap-2">
+          <input type="text" name="content" class="form-control" placeholder="Enter your comment" required />
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    <% } %>
+
+    <div class="mt-3">
+      <% comments.forEach(comment => { %>
+        <div class="d-flex align-items-start gap-3 mb-3">
+          <img src="<%= comment.createdBy.profileImageURL %>" width="48" height="48" class="rounded-circle" alt="avatar" />
+          <div class="flex-grow-1">
+            <div class="fw-semibold mb-1"><%= comment.createdBy.fullName %></div>
+            <pre class="mb-0" style="white-space: pre-wrap;"><%= comment.content %></pre>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <%- include('./partials/scripts') %>
+</body>
+</html>
