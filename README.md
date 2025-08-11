@@ -9,7 +9,7 @@ A simple blog platform where users can sign up/sign in, create posts with cover 
 <a><img src="https://img.shields.io/badge/MongoDB-Mongoose-green" /></a>
 <a><img src="https://img.shields.io/badge/View-EJS-blue" /></a>
 <a><img src="https://img.shields.io/badge/UI-Bootstrap%205-7952B3" /></a>
-<a><img src="https://img.shields.io/badge/License-MIT-blue" /></a>
+
 
 </div>
 
